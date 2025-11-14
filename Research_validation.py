@@ -171,7 +171,7 @@ feat_list = [
 feature_names = [f"density_{f}" for f in feat_list] + ['JDDB','J-TEXT','CMod']
 
 # ==================== CPU-FRIENDLY PARAMS ====================
-YOUR_PARAMS = {
+BAYSEIAN_PARAMS = {
     'bagging_fraction': 0.8831884682475684,
     'bagging_freq': 4,
     'boosting_type': 'dart',
@@ -245,7 +245,7 @@ else:
     print("Training density-only model on CPU...")
     final_pipe = Pipeline([
         ('sc', StandardScaler()),
-        ('classifier', ExplainableLGBMClassifier(**YOUR_PARAMS))
+        ('classifier', ExplainableLGBMClassifier(**BAYSEIAN_PARAMS))
     ])
     final_pipe.fit(train.drop('Is_disrupt', axis=1), train['Is_disrupt'])
     final_pipe['classifier'].feature_names = feature_names
