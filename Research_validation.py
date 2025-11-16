@@ -312,7 +312,7 @@ print(f"Accuracy: {accuracy:.4f}")
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Assuming `final_pipe` is your trained pipeline and `data_test` is your test data.
+# Assuming `final_pipe` is trained pipeline and `data_test` is test data.
 # Assuming `feature_names` is a list of features used in the model.
 
 # Step 0: Assign correct column names to data_test
@@ -320,7 +320,7 @@ print("Original columns in data_test:", data_test.columns.tolist())
 data_test.columns = feature_names
 print("Renamed columns in data_test:", data_test.columns.tolist())
 
-# Now you can run your previous debug code safely
+# Now you can run previous debug code safely
 common_features = [f for f in feature_names if f in data_test.columns]
 
 if len(common_features) == 0:
@@ -396,7 +396,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 features = ['density_DIR', 'density_length', 'J-TEXT', 'JDDB', 'diff_std']
-shap_means = [0.160, 0.08, 0.07, 0.06, 0.05]  # approximate from your model
+shap_means = [0.160, 0.08, 0.07, 0.06, 0.05]  # approximate from the model
 corrs = [0.362, 0.123, 0.106, 0.114, 0.085]
 
 fig, ax = plt.subplots(1, 2, figsize=(12, 5))
